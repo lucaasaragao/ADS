@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Analise de Desenpenho</title>
+</head>
+<body>
+
+	<header>
+		<h1>Analise de Desemvolvimento de Sitemas - Campus IV Rio Tinto</h1>
+		<h3>Aluno: Lucas Magno</h3>
+	</header>
+	<nav>
+		<a href="">Gráficos</a>
+		<a href="">Dados</a>
+		<a href="">Analise</a>
+		<a href="">Perguntas e Respostas</a>
+		<a href="">Conclusão</a>
+	</nav>
+
+	<section>
+		<header>
+			<h2>Analizando o core I5 da 3º Geração</h2>
+			<p>
+				Em 2012 ganhei meu primeiro notebook para estudos, ele era um STI e na época me orgulhava em dizer que ele tinha sido o mais caro da loja.<br>
+				E de fato me serviu muito bem no mais variado tipo de tarefas, desde simples trabalhos com o WORD até mesmo em alguns jogos mais pesados<br> que exigiam uma boa memoria e um bom processamento.
+				Hoje ele está ultrapassado porém ainda perciste firme e forte com seus 4GB de RAM<br> e seu hulmilde hd de 500GB, mas será que meu processador está tão ultrapassado assim?
+				Hoje vamos analisar de o meu antigo PC e saber se um<br> computador de 2012 está tão ultrapassado assim.
+			</p>
+		</header>
+
+		<article>
+			<h3>Primeiro vamos começar do básico: Suas configurações</h3>
+				<p> Processador	Intel(R) Core(TM) i5-3230M CPU @ 2.60GHz, 2601 Mhz, 2 Núcleo(s), 4 Processador(es) Lógico(s)<br>
+
+						Memória Física (RAM) Instalada	4,00 GB<br>
+						Memória física total	3,90 GB<br>
+						Memória física disponível	1,61 GB<br>
+						Memória virtual total	4,58 GB<br>
+						Memória virtual disponível	2,01 GB<br>
+
+						Modelo do sistema	STI NI 1401<br>
+
+						Disco de 500GB<br>
+						Mais informações no link <a href="https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i5-3230M+%40+2.60GHz&id=1849">aqui</a>  
+				</p>
+				<h3>Programa Utilizado</h3>
+				<p>
+					Para está analise foi usado um programa em JAVA que é chamado BenchmarkNumerosPrimos, recebe como parâmetros de<br>
+					entrada o número de threads desejada para executá-lo e o número máximo a ser buscado X. O programa irá procurar <br>
+					 a quantidade de números primos que existem entre 1 e X.
+				</p>
+				<p>
+					Neste exemplo, o programa executará usando <strong>VARIADAS</strong> threads e buscará a quantidade de primos entre 1 e
+					<strong>UM NUMERO QUALQUER</strong>.<br><br>
+					1 a 80000 por exemplo<br><br>
+
+					Cada thread irá fazer a busca de primos para um sub-conjunto da faixa de números, de modo
+					que a carga seja dividida por todas elas.<br>
+					Saída do programa: <br><br>
+					 Para cada execução do programa, dois arquivos serão criados contendo os<br>
+					resultados das medições feitas sobre o seu desempenho, os quais serão localizados no diretório<br>
+					“output-bench-primos/” criado no diretório de execução.<br>
+					 Os dois arquivos criados são: <br><br>
+					o NumThreads: número de threads especificado na execução.<br>
+					o NumeroMaximo: número especificado para buscar primos em [1, NumeroMaximo]<br>
+					o StartTime: timestamp que registra o início da execução.<br>
+					o ElapsedTime: tempo total gasto na execução, em milissegundos.<br>
+					o MeanUtilization: utilização média de CPU durante toda a execução.<br>
+				</p>
+		</article>
+
+		<article>
+			<h3>Medição</h3>
+			<p>
+				Para essa medição foram utilizados <strong>12 números de Threads</strong> variadas. <br><br>
+				São elas: <br><br>
+
+				<h3>Em unidades</h3><br>
+					___________________________________________<br>
+					o NumThreads: 1 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533779022963	<br>
+					o ElapsedTime: 49145	<br>
+					o MeanUtilization: 0.3002788824238387<br>
+					___________________________________________<br>
+										
+					o NumThreads: 2 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533779180269		<br>
+					o ElapsedTime: 26728		<br>
+					o MeanUtilization: 0.5061202461278607<br>
+					___________________________________________<br>
+										
+					o NumThreads: 3 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533779116047		<br>
+					o ElapsedTime: 11628		<br>
+					o MeanUtilization: 0.8005942563589546<br>
+					___________________________________________<br>
+										
+					o NumThreads: 4 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533778069099		<br>
+					o ElapsedTime: 21906		<br>
+					o MeanUtilization: 0.9958958611918248<br>
+					___________________________________________<br>
+										
+					o NumThreads: 5 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533779232480		<br>
+					o ElapsedTime: 20620		<br>
+					o MeanUtilization: 0.9998227578872739<br>
+					___________________________________________<br>
+					
+
+					<h3> Ampliando para dezenas</h3>
+
+										___________________________________________<br>
+					o NumThreads: 10 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533779284128		<br>
+					o ElapsedTime: 20230		<br>
+					o MeanUtilization: 0.9993824724461386<br>
+					___________________________________________<br>
+										
+					o NumThreads: 15 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533779383479			<br>
+					o ElapsedTime: 9396			<br>
+					o MeanUtilization: 0.9996033634777091<br>
+					___________________________________________<br>
+										
+					o NumThreads: 20 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533779332720			<br>
+					o ElapsedTime: 9636			<br>
+					o MeanUtilization: 0.998038921704674<br>
+					___________________________________________<br>
+
+
+					<h3>Ampliando Para centenas</h3>
+										___________________________________________<br>
+					o NumThreads: 100 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533779655521			<br>
+					o ElapsedTime: 18664			<br>
+					o MeanUtilization: 1.0<br>
+					___________________________________________<br>
+										
+					o NumThreads: 500 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533779700148			<br>
+					o ElapsedTime: 19341			<br>
+					o MeanUtilization: 0.9825159601422108<br>
+					___________________________________________<br>
+
+
+					<h3>Ampliando ainda mais</h3>
+										___________________________________________<br>
+					o NumThreads: 40000 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533787296552			<br>
+					o ElapsedTime: 267274			<br>
+					o MeanUtilization: 0.26219867949628933<br>
+					___________________________________________<br>
+										
+					o NumThreads: 50000 <br>
+					o NumeroMaximo: 80000<br>
+					o StartTime: 1533787622178				<br>
+					o ElapsedTime: 1019795				<br>
+					o MeanUtilization: 0.15737620204858357<br>
+					___________________________________________<br>
+
+			</p>
+		</article>
+
+		<article>
+			<h3>Observações Sobre a Primeira analise</h3>
+
+			<p>
+				Podemos ver que quanto maior for o NumThreads mais o MeanUtilization é utilizado.<br>
+				Isso é valido até chegarmos nas centenas<br>
+
+				Quando o NumThreads foi igual a 100 a utilização
+				da CPU chegou aos 100% ou no caso a 1.0, logicamente isso vai variar se a sua maquina estiver fazer alguns processos em segundo plano.
+			</p>
+
+		</article>
+
+		<article>
+			<h3>Gráficos do Primeiro Teste</h3>
+
+			<img src="teste.png" alt="Gráfico" width="600" height="400">
+			<p>O grafico acima mostra a relação entre o aumento dos numeros de threads ao aumento do uso da CPU </p><br>
+
+			<img src="teste2.png" alt="Gráfico2" width="600" height="400">
+			<p>O grafico acima mostra o aumento e o pico do uso da CPU</p>
+
+		</article>
+
+	</section>
+
+
+
+
+</body>
+</html>
