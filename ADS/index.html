@@ -7,20 +7,21 @@
 <body>
 
 	<header>
-		<h1>Analise de Desemvolvimento de Sitemas - Campus IV Rio Tinto</h1>
+		<h1>Analise de Desenvolvimento de Sitemas - Campus IV Rio Tinto</h1>
 		<h3>Aluno: Lucas Magno</h3>
 	</header>
 	<nav>
-		<a href="">Gráficos</a>
-		<a href="">Dados</a>
-		<a href="">Analise</a>
-		<a href="">Perguntas e Respostas</a>
-		<a href="">Conclusão</a>
+		<a href="#configuracoes">Configurações</a>
+		<a href="#programa">Programa Utilizado</a>
+		<a href="#medicao">Medição</a>
+		<a href="#grafico"> Gráfico da Primeira Analise</a>
+		<a href="#perguntas">Perguntas</a>
+		<a href="#medicao2">Segundo Problema</a>
 	</nav>
 
 	<section>
 		<header>
-			<h2>Analizando o core I5 da 3º Geração</h2>
+			<h2>Analizando o core i5 da 3º Geração</h2>
 			<p>
 				Em 2012 ganhei meu primeiro notebook para estudos, ele era um STI e na época me orgulhava em dizer que ele tinha sido o mais caro da loja.<br>
 				E de fato me serviu muito bem no mais variado tipo de tarefas, desde simples trabalhos com o WORD até mesmo em alguns jogos mais pesados<br> que exigiam uma boa memoria e um bom processamento.
@@ -29,7 +30,7 @@
 			</p>
 		</header>
 
-		<article>
+		<article id="configuracoes" >
 			<h3>Primeiro vamos começar do básico: Suas configurações</h3>
 				<p> Processador	Intel(R) Core(TM) i5-3230M CPU @ 2.60GHz, 2601 Mhz, 2 Núcleo(s), 4 Processador(es) Lógico(s)<br>
 
@@ -42,9 +43,9 @@
 						Modelo do sistema	STI NI 1401<br>
 
 						Disco de 500GB<br>
-						Mais informações no link <a href="https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i5-3230M+%40+2.60GHz&id=1849">aqui</a>  
+						Mais informações no link <a href="https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i5-3230M+%40+2.60GHz&id=1849" target="blank">aqui</a>  
 				</p>
-				<h3>Programa Utilizado</h3>
+				<h3 id="programa">Programa Utilizado</h3>
 				<p>
 					Para está analise foi usado um programa em JAVA que é chamado BenchmarkNumerosPrimos, recebe como parâmetros de<br>
 					entrada o número de threads desejada para executá-lo e o número máximo a ser buscado X. O programa irá procurar <br>
@@ -52,7 +53,7 @@
 				</p>
 				<p>
 					Neste exemplo, o programa executará usando <strong>VARIADAS</strong> threads e buscará a quantidade de primos entre 1 e
-					<strong>UM NUMERO QUALQUER</strong>.<br><br>
+					<strong>UM INTEIRO QUALQUER</strong>.<br><br>
 					1 a 80000 por exemplo<br><br>
 
 					Cada thread irá fazer a busca de primos para um sub-conjunto da faixa de números, de modo
@@ -70,7 +71,7 @@
 				</p>
 		</article>
 
-		<article>
+		<article id="medicao">
 			<h3>Medição</h3>
 			<p>
 				Para essa medição foram utilizados <strong>12 números de Threads</strong> variadas. <br><br>
@@ -175,7 +176,7 @@
 			</p>
 		</article>
 
-		<article>
+		<article >
 			<h3>Observações Sobre a Primeira analise</h3>
 
 			<p>
@@ -188,17 +189,87 @@
 
 		</article>
 
-		<article>
+		<article id="grafico">
 			<h3>Gráficos do Primeiro Teste</h3>
 
 			<img src="teste.png" alt="Gráfico" width="600" height="400">
 			<p>O grafico acima mostra a relação entre o aumento dos numeros de threads ao aumento do uso da CPU </p><br>
 
 			<img src="teste2.png" alt="Gráfico2" width="600" height="400">
-			<p>O grafico acima mostra o aumento e o pico do uso da CPU</p>
+			<p>O grafico acima mostra o aumento e o pico do uso da CPU</p><br>
+
+			<h3>Resultado ? </h3>
+
+			<p>Algo bem incomun acontece, quando o numero de Threads aumenta para 500, 40.000 e <br>
+				50.000 o uso da CPU diminui consideravelmente. Será que o core i5 de 2012 funciona melhor <br>
+				sobre pressão? <br> <br>
+				É bem provavel que não, porém ainda não sei explicar o motivo desse fenomeno. <br><br> 
+
+				<a href="https://www.devmedia.com.br/utilizando-threads-parte-1/4459" target="blank">Aqui está outro exemplo de Uso de Thrads</a>
+			</p>
 
 		</article>
 
+		<article id="perguntas">
+
+			
+				<h3>Perguntas</h3>
+
+				<p>
+						a. Como o aumento da quantidade de threads afeta a utilização de CPU? Analise os resultados
+						e discuta possíveis causas deste comportamento. <br><br>
+
+					<strong>Basicamente como falei acima, quanto maior o uso de Theads maior se torna a ultilização da CPU. <br>
+						Pois como sabemos, a criação de novas thrads demanda um gasto maior de processamento. <br>
+					</strong> <br>
+
+						b. Como o aumento da quantidade de threads afeta o tempo total de execução? Analise os
+						resultados e discuta possíveis causas deste comportamento. <br><br>
+						<strong>
+							Com toda certeza sim, com o aumento das threads o tempo total de execução aumenta consideravelmente pois o mesmo <br>
+							tem que gerenciar uma fila enorme de processos, assim gerando um atraso. <br>	
+						</strong> <br>	<br>
+						Podemos ver isso no gráfico abaixo <br><br>
+						<img src="teste3.png" alt="grafico 3" width="700" height="400"> <br><br>
+
+						c. Qual número de threads você acha mais adequado para executar este programa? Você acha
+						que sua escolha poderia ser diferente caso você executasse o mesmo programa em uma
+						máquina diferente? Justifique. <br><br>
+
+						<strong>
+							O número mais adequado pode ser uma pergunta relativa porém segundo minha analise é 15 threads, pois ele utiliza o máximo da CPU <br>
+							com um bom tempo de resposta e execução. Neste caso sim, se eu executasse em uma máquina com <br>
+							mais mémoria e mais processamento o resultado iria ser diferente, pois a gerencia das filas iria ser <br>
+							otimizada. Já que o processador conseguiria tratar uma fila maior de requisições.  
+						</strong> <br> <br>
+
+				</p>
+
+				<h3>EXTRA</h3>
+				<p>
+					- Analise de outra máquina - <br>
+					Configurações:Tipo do sistema	PC baseado em X64 <br>
+					Processador:	Intel(R) Core (TM) i5-7300HQ CPU @ 2.50GHz, 2496 Mhz, 4 Núcleo(s), 4 Processador(es) Lógico(s) <br>
+					Versão/data do BIOS:	Insyde Corp. V1.14, 27/12/2017 <br>
+					Fabricante da placa-base:	KBL <br>
+					Memória Física (RAM) Instalada:	8,00 GB <br>
+					Memória física total:	7,89 GB <br>
+					Memória física disponível:	3,66 GB <br>
+					Memória virtual total:	13,4 GB <br>
+					Memória virtual disponível:	6,38 GB <br>
+					Espaço do arquivo de paginação:	5,50 GB <br> 
+					<img src="testeewerton.png" alt="teste de outro pc" width="600" height="400">
+
+				</p>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<h2>Problema 2: Fazendo acessos à memória</h2>
+
+
+		</article>
 	</section>
 
 
