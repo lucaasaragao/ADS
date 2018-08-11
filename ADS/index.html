@@ -215,6 +215,8 @@
 			
 				<h3>Perguntas</h3>
 
+				<h3>Questão 1</h3>
+
 				<p>
 						a. Como o aumento da quantidade de threads afeta a utilização de CPU? Analise os resultados
 						e discuta possíveis causas deste comportamento. <br><br>
@@ -245,7 +247,51 @@
 
 				</p>
 
+				<p>
+					2 - Queremos agora analisar a escalabilidade deste programa. Então, vamos analisar como o <br>
+					desempenho é impactado quando aumentamos a carga de trabalho do sistema. Neste problema, a <br>
+					carga aumenta quando aumentamos o número máximo indicado para a busca de números primos <br>
+					(NumeroMaximo). Execute o programa para valores diferentes do número máximo para a busca dos <br>
+					primos. Exemplo: 100000, 200000, 300000, 400000 ... (não se restrinja a esses valores). Para esta <br>
+					análise, mantenha fixo o número de threads, usando o número escolhido na letra (c) da questão 1. <br>
+					Analise: <br>
+				</p>
+				<p>
+					a. Como o aumento da carga do sistema (o número maximo) afeta o tempo total de execução? <br>
+					Analise os resultados e discuta possíveis causas deste comportamento. <br><br>
+					
+					<p>
+						<strong>
+							Sim afeta e muito, quanto maior for o numero mais trabalho tem a CPU, levando assim um maior tempo <br>
+							de execução e de processamento e gerencias das threads. Porém, vevos novamente o fenomeno acontecendo <br>
+							a partir de 50.000 o tempo cai consideravelmente. E tendo seu pico em 45.000. Algo acontece que quando as analises <br>
+							chegam perto dos 50.000 sempre há uma queda.
+						</strong>
+					</p> <br> <br>
+
+					<p>Podemos ver isso no grafico abaixo: </p> 
+
+					<img src="teste4.jpg" alt="grafico tempo execução" width="600" height="400">
+					<p>Analise feita com 15 threads</p>
+					<br> <br>
+
+					b. Com base nos resultados de desempenho, você considera este programa escalável?<br>
+					Justifique sua resposta e dê sua opinião sobre possíveis motivos dele ser ou não ser. <br><br>
+					<p><strong>
+						Até certa forma sim, o programa responde bem quando se tem um aumento médio de requisições por outro lado <br>
+						quando temos um aumento grande é possivel ver alguns problemas principalmente no tempo total. O que ainda não <br>
+						consegui entender é o motivo de que quando o numero de threads chega em torno dos 50.000 o programa mostra uma queda <br>
+						brusca,  tanto no tempo quanto na ultilização da CPU. (Isso com as threads fixas)
+					</p></strong>
+				</p>
+
 				<h3>EXTRA</h3>
+
+				<p>Essa maquina que analisei inicialmente seria a minha máquina nova, porém como tive o azar <br>
+					dela ter que ir para garantia, falei com um colega de sala que tem um pc muito parecido com o meu <br>
+					e decido pegar essas informações e compara-las aqui. 
+				</p>
+
 				<p>
 					- Analise de outra máquina - <br>
 					Configurações:Tipo do sistema	PC baseado em X64 <br>
@@ -259,16 +305,80 @@
 					Memória virtual disponível:	6,38 GB <br>
 					Espaço do arquivo de paginação:	5,50 GB <br> 
 					<img src="testeewerton.png" alt="teste de outro pc" width="600" height="400">
+				</p>
 
+				<p>
+					Podemos ver que a máquina acima consegue ser bem mais eficiente <br> 
+					do que a minha, em relaçao ao uso e a gerecias de várias thrads.Porém <br>
+					algumas quedas bruscas também acontecem, no grafico acima podemos ver isso claramente <br>
+					quando ele usou 2.800 threads. 
 				</p>
 		</article>
 	</section>
 
 	<section>
 		<article>
-			<h2>Problema 2: Fazendo acessos à memória</h2>
+			<h2 id="medicao2">Problema 2: Fazendo acessos à memória</h2>
+
+			<p>
+				<strong>Visão geral:</strong> o objetivo deste problema é avaliar o desempenho do acesso nos vários níveis de memória, <br>
+				quando se tem tamanhos variados de itens a serem buscados. Queremos saber como o desempenho <br>
+				dos acessos a um array armazenado na memória é afetado à medida que o seu tamanho indicado como <br>
+				entrada é alterado.
+			</p>
+			<p>
+				<strong>Descrição do programa:</strong> o programa Java chamado BenchmarkAcessoMemoria recebe como parâmetros <br>
+				de entrada o tamanho T do array em KiloBytes (KB) que será usado na execução e a quantidade de <br>
+				acessos X que serão feitos no array. O programa inicialmente aloca o array com o tamanho especificado, <br>
+				preenche o array com valores aleatórios e em seguida realiza X repetições de acessos a posições <br>
+				aleatórias do array. <br>
+			</p>
 
 
+			<p>
+				<strong>Saída do programa:</strong> Para cada execução do programa, um arquivo será criado contendo os resultados <br>
+				das medições feitas sobre o seu desempenho, localizado no diretório “output-bench-memoria” criado <br>
+				no diretório de execução.
+			</p>
+
+			<p>
+				o KBinMemory: tamanho do array usado, especificado em KiloBytes (KB). <br>
+				o ArraySize: tamanho do array em quantidade de elementos. <br>
+				o SearchRepetitions: quantidade de repetições de busca realizadas no array (quantidade de acessos) <br>
+				o StartTime: timestamp que registra o início da execução. <br>
+				o PopulateTime: tempo para preencher o array. <br>
+				o SearchTime: tempo para realizar as X repetições de buscas no array. <br>
+				o TotalTime: tempo total de execução. <br>
+			</p>
+		</article>
+
+		<article>
+			<h3>Questões</h3>
+
+			<p>
+				a. Como o tempo de busca no array varia quando se aumenta o tamanho do array? Analise <br>
+				os resultados e discuta possíveis causas deste comportamento. <br>
+				<p> <strong>
+					Ele não varia em uma constante no começo da analise, na verdade é bem o oposto disso, ou seja ele <br>
+					não tem uma variância continua logo no inicio. Quando se aumenta o tamanho para 200 por exemplo, é que conseguimos <br>
+					ver que variância aumenta como o esperado.
+				</p> </strong> <br>
+
+
+				b. O aumento do tempo de busca é bem comportado quando se aumenta o tamanho do <br>
+				array? O sistema é escalável, ou em alguns momentos existem mudanças mais bruscas <br>
+				no tempo de busca ao variar o tamanho do array? Analise esta questão e discuta <br>
+				possíveis causas deste comportamento. <br>
+
+				<p> 
+					<strong>
+						O aumento do tempo de busca não é comportado, o sistema pode ser consideral escalavel pois ele <br>
+						vai aumentando com a nessesidade no meu teste não houveram mudasnças bruscas. Abaixo exemplifico isso <br>
+						com um gráfico.
+					</strong>
+				</p> <br><br>
+				<img src="testememoria.jpg" alt="" width="600" height="400">
+			
 		</article>
 	</section>
 
